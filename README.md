@@ -1,10 +1,10 @@
 # LsyCookie
 
-desc: This is a plugin of cookie for browser. This plugin output some API for customer.
+abstract: This is a plugin of cookie for browser. This plugin output some API for customer.
 
 plugin name: LsyCookie
 
-version: 1.0.2
+version: 1.0.3
 
 author: loushengyue
 
