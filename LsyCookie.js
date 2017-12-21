@@ -2,16 +2,16 @@
  *      LsyCookie
  *      author loushengyue
  *      website http://www.loushengyue.com
- *      version 1.0.2
+ *      version 1.0.3
  *      methods [set(),get(),getAll(),clear(),clearAll()]
  */
 ;(function (win, doc) {
     /* *
      *      The constructor of LsyCookie
-     *      version 1.0.2
+     *      version 1.0.3
      */
     var mycookie = function () {
-        this.version = 'Lsy cookie 1.0.2';
+        this.version = 'Lsy cookie 1.0.3';
     };
     /* *
      *      create cookie by key and value, and set expires time
@@ -33,15 +33,16 @@
      *      key typeof string
      */
     mycookie.prototype.clear = function (key) {
-        setCookie(key, "", -1);
+        this.set(key, "", -1);
     };
     /* *
      *      remove all cookies
      */
     mycookie.prototype.clearAll = function () {
-        var keys = Object.keys(getAllCookies());
+        var _this = this;
+        var keys = Object.keys(_this.getAll());
         keys.forEach(function (item) {
-            clearCookieByKey(item);
+            _this.clear(item);
         });
     };
     /* *
@@ -61,7 +62,7 @@
      *      key typeof string
      */
     mycookie.prototype.get = function (key) {
-        return getAllCookies()[key];
+        return this.getAll()[key];
     };
     /* *
      *      init function, return new mycookie()
