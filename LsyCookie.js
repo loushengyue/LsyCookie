@@ -1,17 +1,17 @@
 /* *
  *      LsyCookie
  *      author loushengyue
- *      link http://www.loushengyue.com
- *      version 1.0.1
- *      methods [set(),getByKey(),getAll(),clearByKey(),clearAll()]
+ *      website http://www.loushengyue.com
+ *      version 1.0.2
+ *      methods [set(),get(),getAll(),clear(),clearAll()]
  */
 ;(function (win, doc) {
     /* *
      *      The constructor of LsyCookie
-     *      version 1.0.1
+     *      version 1.0.2
      */
     var mycookie = function () {
-        this.version = 'Lsy cookie 1.0.1';
+        this.version = 'Lsy cookie 1.0.2';
     };
     /* *
      *      create cookie by key and value, and set expires time
@@ -32,7 +32,7 @@
      *      remove cookie by key
      *      key typeof string
      */
-    mycookie.prototype.clearByKey = function (key) {
+    mycookie.prototype.clear = function (key) {
         setCookie(key, "", -1);
     };
     /* *
@@ -60,7 +60,7 @@
      *      get cookie by key
      *      key typeof string
      */
-    mycookie.prototype.getByKey = function (key) {
+    mycookie.prototype.get = function (key) {
         return getAllCookies()[key];
     };
     /* *
