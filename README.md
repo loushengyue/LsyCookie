@@ -1,17 +1,22 @@
 # LsyCookie
 
 desc: This is a plugin of cookie for browser. This plugin output some API for customer.
+
 plugin name: LsyCookie
+
 version: 1.0.2
+
 author: loushengyue
+
 Personal website: http://www.loushengyue.com
+
 methods: [set(),get(),getAll(),clear(),clearAll()]
 
 ----
 
-##使用方法如下：
+## 使用方法如下：
 
-###设置cookie
+### 设置cookie
 ```
 //cookie名称key，值val,过期时间time(单位s)
 LsyCookie.set(key, val, time);
