@@ -4,13 +4,13 @@ abstract: This is a plugin of cookie for browser. This plugin output some API fo
 
 plugin name: LsyCookie
 
-version: 1.0.3
+version: 1.2.0
 
 author: loushengyue
 
 Personal website: http://www.loushengyue.com
 
-methods: [set(),get(),getAll(),clear(),clearAll()]
+methods: [setItem(),getItem(),getAll(),removeItem(),clear()]
 
 ----
 
@@ -19,21 +19,21 @@ methods: [set(),get(),getAll(),clear(),clearAll()]
 ### 设置cookie
 ```
 //cookie名称key，值val,过期时间time(单位s)
-LsyCookie.set(key, val, time);
+LsyCookie.setItem(key, val, time);
 ```
 ### 删除cookie
 
 ```
 //通过cookie名称删除
-LsyCookie.clear(key);
+LsyCookie.removeItem(key);
 //删除所有cookie
-LsyCookie.clearAll();
+LsyCookie.clear();
 ```
 ### 获取cookie
 
 ```
 //通过cookie名称获取
-LsyCookie.get(key);
+LsyCookie.getItem(key);
 //获取所有cookie
 LsyCookie.getAll();
 ```
