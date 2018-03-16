@@ -4,7 +4,7 @@ abstract: This is a plugin of cookie for browser. This plugin output some API fo
 
 plugin name: LsyCookie
 
-version: 1.2.0
+version: 1.2.4
 
 author: loushengyue
 
@@ -26,7 +26,7 @@ LsyCookie.getItem(key[string])
 LsyCookie.getAll()
 
 //通过cookie名称删除
-LsyCookie.removeItem(key[string])
+LsyCookie.removeItem(key[string], path[string:default('./')])
 
 //删除所有cookie
 LsyCookie.clear()

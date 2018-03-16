@@ -2,11 +2,11 @@
  *      LsyCookie
  *      author loushengyue
  *      website http://www.loushengyue.com
- *      version 1.2.0
+ *      version 1.2.4
  *      methods [setItem(),getItem(),getAll(),removeItem(),,clear()]
  */
 ;(function (win, doc) {
-    var LsyCookie, expiresTime = 24 * 3600, version = '1.2.0';
+    var LsyCookie, expiresTime = 24 * 3600, version = '1.2.4';
 
     LsyCookie = function () {
         this.version = 'LsyCookie ' + version;
@@ -19,7 +19,7 @@
      *      time    typeof number[7days]
      */
     LsyCookie.prototype.setItem = function (key, val, time, path) {
-        var exp, pathStr;
+        var exp, pathStr = '';
         checkStr(key);
         val = resetVal(val);
         time = resetTime(time);
@@ -28,7 +28,7 @@
         if (path) {
             checkStr(path);
             path = resetPath(path);
-            pathStr = path ? ';path=' + path : '';
+            pathStr = path ? ';path=' + path : pathStr;
         }
         doc.cookie = key + '=' + val + ';expires=' + exp.toGMTString() + pathStr;
     };
@@ -36,8 +36,9 @@
      *      remove cookie by key
      *      key typeof string
      */
-    LsyCookie.prototype.removeItem = function (key) {
-        this.setItem(key, '', -1);
+    LsyCookie.prototype.removeItem = function (key, path) {
+	path = path ? path : './';
+        this.set(key, '', -1, path);
     };
     /* *
      *      remove all cookies
